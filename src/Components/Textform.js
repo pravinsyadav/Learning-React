@@ -7,6 +7,16 @@ export default function Textform(props) {
     setText(newtext);
   };
 
+  const handleLoclick = () => {
+    let newtext = text.toLowerCase();
+    setText(newtext);
+  };
+
+  const handleclearclick = () => {
+    let newtext = "";
+    setText(newtext);
+  };
+
   const clickonchange = (event) => {
     console.log("on change");
     setText(event.target.value); // setText: A function to update the value of text.
@@ -28,11 +38,25 @@ export default function Textform(props) {
           ></textarea>
         </div>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary mx-1"
           onClick={handleupclick}
           onChange={clickonchange}
         >
           Convert to Uppercase
+        </button>
+        <button
+          className="btn btn-primary mx-1"
+          onClick={handleLoclick}
+          onChange={clickonchange}
+        >
+          Convert to Lowercase
+        </button>
+        <button
+          className="btn btn-primary mx-1"
+          onClick={handleclearclick}
+          onChange={clickonchange}
+        >
+          Clear text
         </button>
       </div>
       <div className="container my-3">
